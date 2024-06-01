@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "clothes",
-    "slug": "clothes",
+    "slug": "ecommerce-mobile-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -16,13 +16,22 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "Allow $(PRODUCT_NAME) to use Face ID"
+      },
+      "bundleIdentifier": "com.desco.ecommercemobileapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.USE_BIOMETRIC",
+        "android.permission.USE_FINGERPRINT"
+      ],
+      "package": "com.desco.ecommercemobileapp"
     },
     "web": {
       "bundler": "metro",
@@ -32,11 +41,24 @@
     "plugins": [
       "expo-router",
       "expo-local-authentication"
-  
-
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "068fe2fc-ed5b-498e-aacd-b2eea4d0f06c"
+      }
+    },
+    "owner": "desco",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/068fe2fc-ed5b-498e-aacd-b2eea4d0f06c"
     }
   }
 }
